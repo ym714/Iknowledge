@@ -23,39 +23,35 @@ export default function Waitlist() {
         return (
             <div className="animate-fade-in text-center">
                 <p className="text-gray-900 font-serif text-lg mb-2">You're on the list.</p>
-                <p className="text-gray-500 text-sm">We'll be in touch soon.</p>
                 <button
                     onClick={() => setStatus("idle")}
-                    className="mt-4 text-xs text-gray-400 hover:text-gray-600 underline"
+                    className="mt-2 text-xs text-gray-400 hover:text-gray-600 underline"
                 >
-                    Add another email
+                    Add another
                 </button>
             </div>
         );
     }
 
     return (
-        <form onSubmit={handleSubmit} className="w-full max-w-sm mx-auto animate-fade-in">
-            <div className="flex flex-col sm:flex-row gap-3">
+        <form onSubmit={handleSubmit} className="w-full max-w-xs mx-auto animate-fade-in">
+            <div className="flex items-center border-b border-gray-300 focus-within:border-gray-900 transition-colors">
                 <input
                     type="email"
                     placeholder="Email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="flex-grow px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-400 transition-all font-sans"
+                    className="flex-grow py-2 bg-transparent text-center text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none font-sans"
                 />
                 <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm hover:shadow hover:-translate-y-0.5"
+                    className="ml-2 py-2 text-xs font-medium text-gray-500 hover:text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-colors uppercase tracking-wider"
                 >
-                    {status === "loading" ? "Joining..." : "Join waitlist"}
+                    {status === "loading" ? "..." : "Join"}
                 </button>
             </div>
-            <p className="mt-4 text-xs text-gray-400">
-                Join the waitlist for early access.
-            </p>
         </form>
     );
 }
