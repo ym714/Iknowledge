@@ -12,7 +12,7 @@ export default function Home() {
       <main className="flex-grow px-6">
         <Hero />
 
-        <ContentSection>
+        <ContentSection delay="0.4s">
           <p>
             An Agent is composed of a system prompt in natural language and programs, collectively known as LLMs. Because of their extremely limited components, Agents that exhibit optimal performance in specific contexts are highly likely to be born and exist incidentally at the edge.
           </p>
@@ -27,13 +27,13 @@ export default function Home() {
           </p>
         </ContentSection>
 
-        <ContentSection title="Our Idea">
+        <ContentSection title="Our Idea" delay="0.6s">
           <p>
             Our idea, <strong className="font-bold">Iknowledge</strong>, is an ecosystem woven by organized Agents, where incentives arising from placing a powerful yet simple mechanism at an exquisite balance point drive developers.
           </p>
         </ContentSection>
 
-        <ContentSection title="Join us">
+        <ContentSection title="Join us" delay="0.8s">
           <p>
             We’re building AI systems that push technical boundaries while delivering real value to
             as many people as possible. Our team combines rigorous engineering with creative
@@ -43,7 +43,7 @@ export default function Home() {
             Follow us on X at <Link href="https://x.com/Iknowledge_ai" className="underline decoration-gray-400 underline-offset-2 hover:text-gray-600">@Iknowledge_ai</Link> for updates or see our open roles.
           </p>
           <div className="mt-8">
-            <Link href="#" className="inline-block px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm font-medium text-gray-900 transition-colors">
+            <Link href="#" className="inline-block px-4 py-2 bg-gray-100 hover:bg-gray-200 hover:scale-105 rounded-full text-sm font-medium text-gray-900 transition-all shadow-sm hover:shadow-md">
               See open roles
             </Link>
           </div>
