@@ -56,6 +56,23 @@ export default async function Image() {
                         zIndex: 10,
                     }}
                 >
+                    {/* Logo */}
+                    <div
+                        style={{
+                            width: '80px',
+                            height: '80px',
+                            background: 'black',
+                            borderRadius: '20px',
+                            marginBottom: '20px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+                        }}
+                    >
+                        <div style={{ width: '40px', height: '40px', background: 'white', borderRadius: '50%' }} />
+                    </div>
+
                     <div
                         style={{
                             fontSize: 80,

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Iknowledge",
     description: "Iknowledge is an ecosystem woven by organized Agents.",
-    url: "https://iknowledge.vercel.app",
+    url: "https://iknowledge-xyz.vercel.app",
     siteName: "Iknowledge",
     locale: "en_US",
     type: "website",
