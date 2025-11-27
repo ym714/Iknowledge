@@ -14,8 +14,26 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Iknowledge",
+  metadataBase: new URL("https://iknowledge.vercel.app"), // Replace with your actual domain when you have one
+  title: {
+    default: "Iknowledge",
+    template: "%s | Iknowledge",
+  },
   description: "Iknowledge is an ecosystem woven by organized Agents.",
+  openGraph: {
+    title: "Iknowledge",
+    description: "Iknowledge is an ecosystem woven by organized Agents.",
+    url: "https://iknowledge.vercel.app",
+    siteName: "Iknowledge",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Iknowledge",
+    description: "Iknowledge is an ecosystem woven by organized Agents.",
+    creator: "@Iknowledge_ai",
+  },
 };
 
 export default function RootLayout({
