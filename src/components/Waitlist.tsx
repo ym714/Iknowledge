@@ -12,11 +12,24 @@ export default function Waitlist() {
 
         setStatus("loading");
 
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        try {
+            const res = await fetch("/api/waitlist", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
 
-        setStatus("success");
-        setEmail("");
+            if (res.ok) {
+                setStatus("success");
+                setEmail("");
+            } else {
+                console.error("Failed to join waitlist");
+                setStatus("idle");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            setStatus("idle");
+        }
     };
 
     if (status === "success") {
@@ -49,7 +62,13 @@ export default function Waitlist() {
                     disabled={status === "loading"}
                     className="ml-2 py-2 text-xs font-medium text-gray-500 hover:text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-colors uppercase tracking-wider"
                 >
-                    {status === "loading" ? "..." : "Join"}
+                    {status === "loading" ? (
+                        <span className="animate-pulse">...</span>
+                    ) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    )}
                 </button>
             </div>
         </form>
