@@ -14,7 +14,7 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iknowledge.vercel.app"), // Replace with your actual domain when you have one
+  metadataBase: new URL("https://iknowledge-xyz.vercel.app"),
   title: {
     default: "Iknowledge",
     template: "%s | Iknowledge",
