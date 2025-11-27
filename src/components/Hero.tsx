@@ -1,7 +1,7 @@
 export default function Hero() {
     return (
         <section className="pt-32 pb-16 text-center font-sans">
-            <h1 className="text-5xl md:text-6xl font-sans tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-gray-900 via-gray-600 to-gray-400 uppercase leading-tight mb-8 animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-serif tracking-widest text-gray-900 uppercase leading-tight mb-8 animate-fade-in">
                 <span className="block">Iknowledge</span>
             </h1>
 
