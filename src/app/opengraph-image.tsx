@@ -1,6 +1,9 @@
 import { ImageResponse } from 'next/og';
+import fs from 'fs';
+import path from 'path';
 
-export const runtime = 'edge';
+// Remove edge runtime to allow fs usage
+// export const runtime = 'edge';
 
 export const alt = 'Iknowledge';
 export const size = {
@@ -11,10 +14,10 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
-    // We can load fonts here if needed, but for simplicity we'll use system fonts or fetch them.
-    // For a truly premium look matching the site, we would load the Merriweather font.
-    // However, loading fonts in edge runtime can be tricky without a fetchable URL.
-    // We will use a standard serif font stack that approximates it.
+    // Read the background image from the public directory
+    const imagePath = path.join(process.cwd(), 'public', 'og-bg.jpg');
+    const imageBuffer = fs.readFileSync(imagePath);
+    const imageBase64 = `data:image/jpeg;base64,${imageBuffer.toString('base64')}`;
 
     return new ImageResponse(
         (
@@ -27,41 +30,43 @@ export default async function Image() {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontFamily: '"Merriweather", "Times New Roman", serif',
+                    fontFamily: '"Times New Roman", serif',
+                    position: 'relative',
                 }}
             >
+                {/* Background Image */}
+                <img
+                    src={imageBase64}
+                    alt="Background"
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                    }}
+                />
+
+                {/* Overlay Content */}
                 <div
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        zIndex: 10,
                     }}
                 >
-                    {/* Logo / Icon representation */}
-                    <div
-                        style={{
-                            width: '80px',
-                            height: '80px',
-                            background: 'black',
-                            borderRadius: '20px', // Soft rounded corners like the favicon
-                            marginBottom: '40px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        }}
-                    >
-                        {/* Abstract shape inside */}
-                        <div style={{ width: '40px', height: '40px', background: 'white', borderRadius: '50%' }} />
-                    </div>
-
                     <div
                         style={{
                             fontSize: 80,
                             fontWeight: 900,
-                            color: '#111',
+                            color: '#111', // Dark text as requested, or maybe white if bg is dark?
+                            // The uploaded image is light/beige, so dark text is better.
                             letterSpacing: '-0.02em',
                             marginBottom: '20px',
+                            textShadow: '0 2px 10px rgba(255,255,255,0.5)', // Add subtle glow for readability
                         }}
                     >
                         Iknowledge
@@ -70,9 +75,10 @@ export default async function Image() {
                     <div
                         style={{
                             fontSize: 32,
-                            color: '#666',
+                            color: '#333',
                             textAlign: 'center',
                             maxWidth: '800px',
+                            fontWeight: 'bold',
                         }}
                     >
                         An ecosystem woven by organized Agents.
