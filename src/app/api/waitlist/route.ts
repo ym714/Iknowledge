@@ -29,16 +29,20 @@ export async function POST(request: Request) {
 
             // 2. Add to Resend Audience (if Audience ID is configured)
             const audienceId = process.env.RESEND_AUDIENCE_ID;
+            console.log("Audience ID:", audienceId); // DEBUG
+
             if (audienceId) {
                 try {
-                    await resend.contacts.create({
+                    const contactResult = await resend.contacts.create({
                         email: email,
                         audienceId: audienceId,
                     });
+                    console.log("Contact creation result:", contactResult); // DEBUG
                 } catch (error) {
                     console.error("Failed to add contact:", error);
-                    // Continue even if adding contact fails (e.g. already exists)
                 }
+            } else {
+                console.warn("RESEND_AUDIENCE_ID is not defined");
             }
 
             // 3. Send Notification Email to Admin (You)
