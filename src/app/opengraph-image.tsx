@@ -92,8 +92,9 @@ export default async function Image() {
                             fontSize: 32,
                             color: '#333',
                             textAlign: 'center',
-                            maxWidth: '800px',
+                            maxWidth: '600px', // Constrain width for mobile/square crop safety
                             fontWeight: 'bold',
+                            lineHeight: 1.4,
                         }}
                     >
                         An ecosystem woven by organized Agents.
