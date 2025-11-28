@@ -77,14 +77,19 @@ export default async function Image() {
                         style={{
                             fontSize: 80,
                             fontWeight: 900,
-                            color: '#111', // Dark text as requested, or maybe white if bg is dark?
-                            // The uploaded image is light/beige, so dark text is better.
+                            color: '#2C3E50', // Match the new dark slate color
                             letterSpacing: '-0.02em',
                             marginBottom: '20px',
-                            textShadow: '0 2px 10px rgba(255,255,255,0.5)', // Add subtle glow for readability
+                            textShadow: '0 2px 10px rgba(255,255,255,0.5)',
+                            display: 'flex',
+                            gap: '20px',
+                            alignItems: 'center',
+                            fontFamily: '"Times New Roman", serif', // Ensure serif font is used
                         }}
                     >
-                        Iknowledge
+                        <span style={{ opacity: 0.9 }}>know</span>
+                        <span style={{ fontSize: '100px' }}>I</span>
+                        <span style={{ opacity: 0.9 }}>edge</span>
                     </div>
 
                     <div
