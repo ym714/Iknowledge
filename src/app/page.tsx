@@ -29,7 +29,7 @@ export default function Home() {
 
         <ContentSection title="Our Idea" delay="0.6s">
           <p>
-            Our idea, <strong className="font-bold">Iknowledge</strong>, is an ecosystem woven by organized Agents, where incentives arising from placing a powerful yet simple mechanism at an exquisite balance point drive developers.
+            Our idea, <strong className="font-bold">know I edge</strong>, is an ecosystem woven by organized Agents, where incentives arising from placing a powerful yet simple mechanism at an exquisite balance point drive developers.
           </p>
         </ContentSection>
 

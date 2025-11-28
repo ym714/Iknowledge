@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og';
 // Remove edge runtime to allow fs usage
 // export const runtime = 'edge';
 
-export const alt = 'Iknowledge';
+export const alt = 'know I edge';
 export const size = {
     width: 1200,
     height: 630,
