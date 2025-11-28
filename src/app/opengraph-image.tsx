@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og';
+import fs from 'fs';
+import path from 'path';
 
 // Remove edge runtime to allow fs usage
 // export const runtime = 'edge';
@@ -12,9 +14,10 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
-    // Use absolute URL for the background image to ensure it works in Vercel
-    // Note: In a real production app, you might want to use process.env.VERCEL_URL
-    const imageUrl = 'https://iknowledge-xyz.vercel.app/og-bg.jpg';
+    // Read the background image from the filesystem to avoid network round-trips/timeouts
+    const imagePath = path.join(process.cwd(), 'public', 'og-bg.jpg');
+    const imageBuffer = await fs.promises.readFile(imagePath);
+    const imageBase64 = `data:image/jpeg;base64,${imageBuffer.toString('base64')}`;
 
     return new ImageResponse(
         (
@@ -34,7 +37,7 @@ export default async function Image() {
                 {/* Background Image */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src={imageUrl}
+                    src={imageBase64}
                     alt="Background"
                     style={{
                         position: 'absolute',

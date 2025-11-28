@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "know I edge",
     description: "know I edge is an ecosystem woven by organized Agents.",
     creator: "@Iknowledge_ai",
-    images: ["https://iknowledge-xyz.vercel.app/opengraph-image?v=2"],
+    images: ["https://iknowledge-xyz.vercel.app/opengraph-image?v=3"],
   },
 };
 
