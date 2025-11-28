@@ -8,13 +8,23 @@
 @theme {
   --font-sans: var(--font-inter);
   --font-serif: var(--font-merriweather);
+  --font-cinzel: var(--font-cinzel);
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
 }
 
 body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
 }
 
@@ -23,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -31,7 +42,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
-  opacity: 0; /* Start hidden */
+  opacity: 0;
+  /* Start hidden */
 }
 
 html {
