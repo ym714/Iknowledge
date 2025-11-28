@@ -14,7 +14,7 @@ export default function Home() {
 
         <ContentSection delay="0.4s">
           <p>
-            An Agent is composed of a system prompt in natural language and programs, collectively known as LLMs. Because of their extremely limited components, Agents that exhibit optimal performance in specific contexts are highly likely to be born and exist incidentally at the edge.
+            An Agent is composed of a system prompt in natural language and programs. Because of their extremely limited components, Agents that exhibit optimal performance in specific contexts are highly likely to be born and exist incidentally at the edge.
           </p>
           <p>
             So, how likely is it that we will encounter and be able to solve a problem with an Agent that exists in some corner of this world and is most suited to the situation or problem at hand?
