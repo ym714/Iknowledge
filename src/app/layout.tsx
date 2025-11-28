@@ -21,23 +21,23 @@ const cinzel = Cinzel({
 export const metadata: Metadata = {
   metadataBase: new URL("https://iknowledge-xyz.vercel.app"),
   title: {
-    default: "Iknowledge",
-    template: "%s | Iknowledge",
+    default: "know I edge",
+    template: "%s | know I edge",
   },
-  description: "Iknowledge is an ecosystem woven by organized Agents.",
+  description: "know I edge is an ecosystem woven by organized Agents.",
   openGraph: {
-    title: "Iknowledge",
-    description: "Iknowledge is an ecosystem woven by organized Agents.",
+    title: "know I edge",
+    description: "know I edge is an ecosystem woven by organized Agents.",
     url: "https://iknowledge-xyz.vercel.app",
-    siteName: "Iknowledge",
+    siteName: "know I edge",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Iknowledge",
-    description: "Iknowledge is an ecosystem woven by organized Agents.",
-    creator: "@Iknowledge_ai",
+    title: "know I edge",
+    description: "know I edge is an ecosystem woven by organized Agents.",
+    creator: "@Iknowledge_ai", // Keep handle as is for now unless user specifies
   },
 };
 
